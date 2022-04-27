@@ -1,0 +1,102 @@
+@media(max-width:768px){
+  .container{
+    @include p-s("padding-right", 10);
+    @include p-s("padding-left", 10);
+  }
+  .header {
+    &__logo-img {
+      @include p-s("width", 315);
+      @include p-s("height", 315);
+    }
+    &__logo-text {
+      @include p-s("font-size", 75);
+      @include p-s("line-height", 70);
+      @include shadow("text-shadow", 2, 2, 0, #6D4169);
+    }
+    &__menu-btn {
+      @include p-s("width", 200);
+      @include p-s("height", 200);
+      @include p-s("padding-top", 48);
+      @include p-s("padding-right", 48);
+      @include p-s("padding-bottom", 48);
+      @include p-s("padding-left", 48);
+      @include p-s("border-radius", 48);
+      @include shadow("box-shadow", 0, 0, 24, rgba(119, 119, 119, 0.5));
+    }
+    &__menu-btn:hover {
+      @include shadow("box-shadow", 0, 0, 40, rgba(109, 65, 105, 1));
+    }
+    &__menu-btn-line {
+      @include p-s("width", 104);
+      @include p-s("height", 12);
+    }
+    &__menu-btn-line::before{
+      content:"";
+      @include p-s("width", 104);
+      @include p-s("height", 12);
+      @include p-s("bottom", 46);
+    }
+    &__menu-btn-line::after{
+      content:"";
+      @include p-s("width", 104);
+      @include p-s("height", 12);
+      @include p-s("top", 46);
+    }
+  }
+
+  .page {
+    &__main-title{
+      @include p-s("font-size", 72);
+      @include p-s("line-height", 72);
+      @include p-s("padding-top", 52);
+      @include p-s("padding-bottom", 60);
+      @include shadow("text-shadow", 2, 2, 0, #6D4169);
+    }
+    &__content-inner {
+      @include p-s("border-radius", 24);
+      @include border("border", 4, solid, rgba(255, 255, 255, .7));
+      @include shadow("box-shadow", 0, 0, 3, rgba(0, 0, 0, 0.15));
+    }
+    &__content-title {
+      @include p-s("font-size", 48);
+      @include p-s("line-height", 52);
+      @include shadow("text-shadow", 2, 2, 0, #6D4169);
+      @include border("border-bottom", 6, solid, rgba(149, 87, 143, 0.5));
+    }
+    &__content-subtitle {
+      @include p-s("font-size", 40);
+      @include p-s("line-height", 40);
+      @include shadow("text-shadow", 2, 2, 0, #777);
+    }
+    &__content-text {
+      @include p-s("font-size", 34);
+      @include p-s("line-height", 40);
+      @include shadow("text-shadow", 2, 2, 0, #777);
+    }
+    &__content-text-wrapper p:first-child{
+      @include p-s("width", 625);
+      @include p-s("padding-right", 30);
+    }
+    &__content-text-wrapper p:last-child{
+      @include p-s("width", 915);
+      @include p-s("padding-left", 30);
+      @include border("border-left", 6, solid, rgba(149, 87, 143, 0.5));
+    }
+  }
+  .page__content-text-wrapper + .page__content-text-wrapper p{
+    @include p-s("padding-top", 30);
+  }
+  .page__content-text iframe{
+    @include p-s("height", 1000);
+    @include p-s("margin-top", 30);
+    @include p-s("border-radius", 24);
+  }
+  .file{
+    @include p-s("padding-left", 50);
+  }
+  .file::before{
+    content:"";
+    @include p-s("width", 32);
+    @include p-s("height", 40);
+  }
+}
