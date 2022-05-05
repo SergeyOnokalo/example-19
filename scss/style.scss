@@ -68,9 +68,10 @@ body{
   position: relative;
 }
 .wrapper{
+  @include p-s("width", 1200); 
   background-image: url(../images/bgImg2.svg);
   background-position: center;
-  background-size:  contain;
+  background-size: contain ;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -187,8 +188,33 @@ body{
     @include border("border", 2, solid, rgba(255, 255, 255, .7));
     @include shadow("box-shadow", 0, 0, 15, rgba(0, 0, 0, 0.15));
     background-color: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(6px);
+    // backdrop-filter: blur(6px);
     width: 100%;
+    position: relative;
+  }
+  &__content-inner::before{
+    content:"";
+    @include p-s("width", 65);
+    @include p-s("height", 65);
+    @include p-s("top", -15);
+    @include p-s("right", -15);
+    position: absolute;
+    background-image: url(../images/vector-bg-content.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    // opacity: 0.9;
+  }
+  &__content-inner::after{
+    content:"";
+    @include p-s("width", 65);
+    @include p-s("height", 65);
+    @include p-s("bottom", -15);
+    @include p-s("left", -15);
+    position: absolute;
+    background-image: url(../images/vector-bg-content-2.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    // opacity: 0.9;
   }
   &__content-title {
     font-family: 'StolzlDisplay-Medium';
